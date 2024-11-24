@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import { BeforeDiv, BigSeconddiv, CarinTab, Lasttabdiv, MAInrevie, MainReview, MiddleReview, SecondMiddle, SecondTab } from './tabstyle';
+import { BeforeDiv, BigSeconddiv, CarinTab, Emaildesign, Lasttabdiv, MAInrevie, MainReview, MiddleReview, SecondMiddle, SecondTab } from './tabstyle';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import topCamperCars from './topCamperCars';
 // import { useParams } from 'react-router-dom';
 import { caravans } from '../mock/caravan';
 import Location from '../../assets/Screenshot_1 1.svg'
-
+import emailjs from '@emailjs/browser';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -51,6 +51,24 @@ function a11yProps(index) {
 export default function Caravantabs() {
 
    
+  const form = React.useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_i7k3t4d', 'template_zia1ixb', form.current, {
+        publicKey: '1-eQAcg9u0ReJFiDN',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -201,11 +219,15 @@ export default function Caravantabs() {
       </Accordion>
 </SecondTab>
 <SecondMiddle>
-  <h2 >Send a question</h2>
-  <input id="input3" type="text" placeholder="Your name" />
-  <input id="input1" type="text" placeholder="Your email" />
-  <textarea placeholder="Your question"/>
-  <button><p>Send question</p></button>
+<form  ref={form} onSubmit={sendEmail}>
+<h2 >Send a question</h2>
+<Emaildesign>
+<input id="input3" name="user_name"  type="text" placeholder="Your name" />
+<input id="input1" name="user_email" type="text" placeholder="Your email" />
+<textarea name="message" placeholder="Your question"/><br />
+</Emaildesign>
+<button><p>Send question</p></button>
+</form>
 
 
   
@@ -293,11 +315,15 @@ export default function Caravantabs() {
       </Accordion>
 </SecondTab>
 <SecondMiddle>
-  <h2 >Have you got a question</h2>
-  <input id="input3" type="text" placeholder="Your name" />
-  <input id="input1" type="text" placeholder="Your email" />
-  <textarea placeholder="Your question"/>
-  <button><p>Send question</p></button>
+  <form  ref={form} onSubmit={sendEmail}>
+    <h2 >Have you got a question</h2>
+    <Emaildesign>
+    <input id="input3" name="user_name"  type="text" placeholder="Your name" />
+    <input id="input1" name="user_email" type="text" placeholder="Your email" />
+    <textarea name="message" placeholder="Your question"/><br />
+    </Emaildesign>
+    <button><p>Send question</p></button>
+    </form>
 </SecondMiddle>
 </BigSeconddiv>
       </CustomTabPanel>
@@ -318,11 +344,15 @@ export default function Caravantabs() {
           
         </Lasttabdiv>
       <SecondMiddle>
-  <h2 >Have you got a question</h2>
-  <input id="input3" type="text" placeholder="Your name" />
-  <input id="input1" type="text" placeholder="Your email" />
-  <textarea placeholder="Your question"/>
-  <button><p>Send question</p></button>
+  <form  ref={form} onSubmit={sendEmail}>
+    <h2 >Have you got a question</h2>
+    <Emaildesign>
+    <input id="input3" name="user_name"  type="text" placeholder="Your name" />
+    <input id="input1" name="user_email" type="text" placeholder="Your email" />
+    <textarea name="message" placeholder="Your question"/><br />
+    </Emaildesign>
+    <button><p>Send question</p></button>
+    </form>
 </SecondMiddle></BeforeDiv>
       </CustomTabPanel>
     </Box>

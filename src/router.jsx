@@ -27,9 +27,10 @@ import Navbarcomponents from './components/navbar'
 import Footercomponents from './components/footer'
 
 
+
 const Routercomponent = () => {
   const location = useLocation(); 
-  const hideNavbarFooter = location.pathname === '/' || location.pathname === '/sing-up';
+  const hideNavbarFooter = location.pathname === '/' || location.pathname === '/sing-up' || location.pathname === '/email';
 
   return (<>
     <>

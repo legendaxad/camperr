@@ -22,6 +22,24 @@ import { usedVehicles } from '../mock/usedcar';
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
 
+  const form = React.useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_i7k3t4d', 'template_zia1ixb', form.current, {
+        publicKey: '1-eQAcg9u0ReJFiDN',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
+  };
   return (
     <div
       role="tabpanel"
@@ -56,6 +74,24 @@ export default function Usedcartabs() {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+  };
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_i7k3t4d', 'template_zia1ixb', form.current, {
+        publicKey: '1-eQAcg9u0ReJFiDN',
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        },
+      );
   };
 
   return (
