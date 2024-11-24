@@ -90,7 +90,7 @@ const Caravancomponents = () => {
               </div>
             </AccordionDetails>
           </Accordion>
-          <Accordion>
+          <Accordion defaultExpanded>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel2-content"
@@ -120,8 +120,8 @@ const Caravancomponents = () => {
                 <br />
               </Stright>
             </AccordionDetails>
-          </Accordion>
-          <Accordion>
+          </Accordion >
+          <Accordion defaultExpanded>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel2-content"
@@ -146,7 +146,7 @@ const Caravancomponents = () => {
               </Stright>
             </AccordionDetails>
           </Accordion>
-          <Accordion>
+          <Accordion defaultExpanded>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel2-content"
@@ -176,7 +176,7 @@ const Caravancomponents = () => {
               </Stright>
             </AccordionDetails>
           </Accordion>
-          <Accordion>
+          <Accordion defaultExpanded>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel2-content"
@@ -206,7 +206,7 @@ const Caravancomponents = () => {
               </Stright>
             </AccordionDetails>
           </Accordion>
-          <Accordion>
+          <Accordion defaultExpanded >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel2-content"

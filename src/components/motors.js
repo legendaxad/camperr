@@ -3,6 +3,7 @@ import imageba from "../assets/backgroundimagemotor.jpg";
 export const Bigdiv = styled.div`
   padding: 70px;
   display: flex;
+  justify-content: center;
 `;
 
 export const Homecop = styled.div`
@@ -21,7 +22,7 @@ export const Homecop = styled.div`
   color: white;
 `;
 export const Leftdiv = styled.div`
-  width: 18%;
+      width: 227px;
   display: flex;
   flex-direction: column;
   label {
@@ -153,17 +154,19 @@ export const Rightb = styled.button`
 `;
 
 export const Rightdiv = styled.div`
-  width: 80%;
+  
   margin-left: 5%;
 `;
 export const Navtable = styled.div`
   display: flex;
   align-items: center;
+      width: 1030px;
   justify-content: space-between;
 `;
 export const Leftnavbar = styled.div`
   display: flex;
   align-items: center;
+  
   justify-content: center;
   p {
     color: var(--text, #373737);
@@ -183,6 +186,7 @@ export const Leftnavbar = styled.div`
   }
 `;
 export const Stright = styled.div`
+
   div {
     display: flex;
     align-items: center;
@@ -253,7 +257,7 @@ export const Foursearch = styled.div`
   }
 `;
 export const Menucars = styled.div`
-  width: 100%;
+  width: 1030px;
   height: 1px;
   margin-top: 2px;
 

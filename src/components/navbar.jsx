@@ -10,7 +10,7 @@ const Navbarcomponents = () => {
     <div>
       <Container>
         <div>
-          <Link style={{ textDecoration: "none" }} to="/">
+          <Link style={{ textDecoration: "none" }} to="/homepage">
             <img src={logocamper} alt="logo" />
           </Link>
         </div>
@@ -96,7 +96,7 @@ const Navbarcomponents = () => {
         </Menucont>
         <Salecont>
           <img src={salecor} alt="shopping-loge" />
-          <img src={user} alt="user=logo" />
+          <Link style={{ textDecoration: "none" }} to="/"> <img src={user} alt="user=logo" /></Link>
           <p>
             En
             <svg

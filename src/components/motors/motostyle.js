@@ -3,7 +3,7 @@ import Datilimg from "../../assets/dtailbackgrounf.svg"
 export const Hmenuca=styled.div`
 display: grid;
 grid-template-areas: 'a a a a';
-
+    width: 850px;
 gap: 20px;
 
 padding-top: 20px;
@@ -167,8 +167,9 @@ flex-direction: column;
 
 `
 export const Firstdiv=styled.div`
+padding: 20px 0px;
 display: flex;
-
+gap: 20px;
 flex: 1;
 justify-content: center;
 
@@ -178,16 +179,19 @@ div img{
       width: 626px;
 height: 381px;
 flex-shrink: 0;
+border-radius: 10px;
+
+box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.10);
+background: #FFF;
 }
 `
 export const CArinfo=styled.div`
 display: flex;
 flex-direction: column;
-margin-top: 10px;
+height: 396px;
+
 padding:5px 70px 80px 13px;
-/* flex:1; */
-/* width: 40%; */
-height: 360px;
+
 border-radius: 10px;
 
 box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.10);

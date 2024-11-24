@@ -179,16 +179,17 @@ text-align: center !important;
 
 
 export const Blogdiv=styled.div`
-margin:20px 0px ;
 display: flex;
-justify-content: center;
-align-items: start;
-margin-bottom: 60px;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    padding-bottom: 50px;
 
 
 `
 export const CamperBlog=styled.div`
-padding: 0px 30px 0px 70px;
+display: block;
+unicode-bidi: isolate;
 h4{
       color: var(--sariq, #FF7A00);
 font-family: Montserrat;
@@ -197,23 +198,33 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 }
-div {
+div{
+      display: flex;
+      justify-content: center;
+
+}
+div
+{
 p{
      
-      color: #000;
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-text-align:left;
+      color: rgb(0, 0, 0);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 380px;
+    height: 124px;
       
 }}
 `
 export const Campervideo=styled.div`
 display: grid;
+    grid-template-areas: "a a a";
+    gap: 7px;
 
-grid-template-areas: 'a a a';
-gap: 20px;
 `
 
+export const Axaddddd=styled.div`
+
+`
