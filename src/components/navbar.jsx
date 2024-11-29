@@ -2,8 +2,10 @@ import React from "react";
 import { Container, Menucont, Salecont } from "./navbarstyle";
 import logocamper from "../assets/Camper.svg";
 import salecor from "../assets/clarity_shopping-cart-solid.svg";
-import user from "../assets/bx_bxs-user.svg";
+
 import { Link } from "react-router-dom";
+
+import MenuSimple from "./login/profilr";
 
 const Navbarcomponents = () => {
   return (
@@ -71,7 +73,7 @@ const Navbarcomponents = () => {
             </p>
           </Link>
           <Link style={{ textDecoration: "none" }} to="/usedcar">
-            {" "}
+            
             <p>
               Used Car
               <svg
@@ -95,8 +97,9 @@ const Navbarcomponents = () => {
           </Link>
         </Menucont>
         <Salecont>
-          <img src={salecor} alt="shopping-loge" />
-          <Link style={{ textDecoration: "none" }} to="/"> <img src={user} alt="user=logo" /></Link>
+        <Link style={{ textDecoration: "none" }} to="/order">   <img src={salecor} alt="shopping-loge" /></Link>
+          {/* <Link style={{ textDecoration: "none" }} to="/"> <MenuIntroduction/></Link> */}
+          <MenuSimple/>
           <p>
             En
             <svg

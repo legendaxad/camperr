@@ -52,7 +52,14 @@ flex-shrink: 0;}
 `
 
 //question part
+ export const Emaildesign=styled.div`
+display: flex;
+flex-direction:column;
+input{
 
+
+}
+`
 export const SecondTab=styled.div`
 padding-right: 70px;
 p{
@@ -67,7 +74,7 @@ line-height: normal;
 `
 export const SecondMiddle=styled.div`
 /* display: flex;
-flex-direction:column;
+
 justify-content: center;
 align-items: center; */
 
@@ -84,7 +91,7 @@ h2{text-align:center;
 }
 #input3 {
     margin-top: 20px;
-    width: 390px;
+    width: 400px;
   height: 50px;
   border-radius: 8px;
   padding-left: 10px;
@@ -96,7 +103,7 @@ h2{text-align:center;
 
 #input1 {
     margin-top: 10px;
-    width: 390px;
+    width: 400px;
   height: 50px;
   border-radius: 8px;
   padding-left: 10px;
@@ -141,7 +148,7 @@ line-height: 100%; /* 14px */
 button{
       border-radius: 10px;
 background: var(--blue, #006DAB);
-width: 390px;
+width: 410px;
 height: 50px;
 flex-shrink: 0;
 border: none;

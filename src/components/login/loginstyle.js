@@ -6,7 +6,7 @@ export const MainLog = styled.div`
 export const Login = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 150px 0px;
+  margin: 50px 0px;
   padding: 33px;
   gap: 30px;
   

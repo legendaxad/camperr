@@ -161,14 +161,22 @@ export const Navtable = styled.div`
   display: flex;
   align-items: center;
       width: 1030px;
-  justify-content: space-between;
+  justify-content: center ;
 `;
 export const Leftnavbar = styled.div`
   display: flex;
   align-items: center;
-  
+  width: 100%;
   justify-content: center;
-  p {
+  input{
+    width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin: 0px 10px;
+  height: 15px;
+  }
+  p {display:flex;
+    gap: 5px;
     color: var(--text, #373737);
     font-family: Montserrat;
     font-size: 18px;
@@ -200,23 +208,12 @@ export const Rightnavbar = styled.div`
   justify-content: center;
 `;
 export const Fisrtsearch = styled.div`
-  display: flex;
-  padding-right: 10px;
-  align-items: center;
-  justify-content: center;
-  p {
-    color: var(--text, #373737);
-    font-family: Montserrat;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 100%; /* 16px */
-  }
+ 
 `;
 export const Secondsearch = styled.div``
 
 export const Thirdsearch = styled.div`
-  padding-left: 10px;
+  
   display: flex;
   align-items: center;
   justify-content: center;

@@ -320,9 +320,11 @@ img{
 export const Buttonsa=styled.div`
 
 display: flex;
-flex-direction: row !important;
-gap: 12px;
-padding-left: -50px !important;
+flex-direction: row  !important;
+gap: 20px;
+padding: 0px 60px;
+
+justify-content: start !important;
 
 Button{
       width: 180px;

@@ -29,6 +29,7 @@ export const Maincamp = styled.div`
   }
 `;
 export const Campingcenter = styled.div`
+
   display: grid;
   margin: 80px 0px;
   grid-template-areas: "a a a";
@@ -71,7 +72,14 @@ export const Location = styled.div`
     line-height: normal;
   }
 `;
+export const MainCampingdiv=styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+`
 export const Campingdiv=styled.div`
+
+width: 1366px;
 display: flex;
 margin: 100px 70px;
 justify-content: center;
@@ -86,11 +94,14 @@ line-height: normal;
 }
 `
 export const Imagescamping=styled.div`
+display: flex;
+align-items: center;
+justify-content: space-between;
 
 
 img{
- margin:0px 10px;
-  width: 194px;
+ 
+  width: 200px;
 height: 147px;
 flex-shrink: 0;
 border-radius: 10px;
@@ -105,6 +116,7 @@ gap: 10px 100px;
 p{
   display: flex;
   align-items: center;
+  justify-content: start;
   gap: 5px;
 }
 `

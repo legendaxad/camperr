@@ -6,14 +6,15 @@ import { Buttun, Carinsideinfo, Insidecar, Maincar, Vmenucar}  from './motostyle
 import { Menucars } from '../motors'
 import { motordata } from '../mock/motor'
 import { Link } from 'react-router-dom'
-const Vmenucomponent = () => {
+const Vmenucomponent = ({searchData}) => {
      
+  const Chekeddata=motordata.filter((data)=>data.car.name.toLowerCase().includes(searchData.toLowerCase()))
   return (
     <div>
       <Menucars></Menucars>
      <Vmenucar>
      {
-      motordata.map((value , Hmenu)=>{
+      Chekeddata.map((value , Hmenu)=>{
             return (
                  
                   <>

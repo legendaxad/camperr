@@ -22,16 +22,19 @@ import Logincomponent from './components/login/login'
 import Singupcomponent from './components/login/singup'
 import Campingcomponent from './components/camping/camping'
 import Campingdetail from './components/camping/campingdetail'
-import KakaoMap from './components/map/kakaomap'
+
 import Navbarcomponents from './components/navbar'
 import Footercomponents from './components/footer'
+import Notfound from './components/login/notfound'
+import Myordercomponent from './components/order/myorder'
+
 
 
 
 const Routercomponent = () => {
   const location = useLocation(); 
-  const hideNavbarFooter = location.pathname === '/' || location.pathname === '/sing-up' || location.pathname === '/email';
-
+  const hideNavbarFooter = location.pathname === '/' || location.pathname === '/sing-up' || location.pathname === '/*' ;
+   
   return (<>
     <>
     {!hideNavbarFooter && <Navbarcomponents />}
@@ -54,7 +57,10 @@ const Routercomponent = () => {
       <Route path='/' element={<Logincomponent/>}/>
       <Route path='/sing-up' element={<Singupcomponent/>}/>
       <Route path='/camping-place/:id' element={<Campingdetail/>}/>
-      <Route path='/contact' element={<KakaoMap/>}/>
+      <Route path='*' element={<Notfound/>}/>
+      <Route path='/order' element={<Myordercomponent/>}/>
+      
+      
           </Routes>
           {!hideNavbarFooter && <Footercomponents />}
 

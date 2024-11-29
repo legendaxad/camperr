@@ -1,13 +1,11 @@
 import React from "react";
 
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import { campingPlaces } from "../camping/campingPlaces";
+import { Lasttabdiv } from "../tabs/tabstyle";
 
-const KakaoMap = () => {
-      const { id } = useParams();
-      const camping = campingPlaces.find((item) => item.id === parseInt(id));
+
+const KakaMap = () => {
   const new_script = (src) => {
     return new Promise((resolve, reject) => {
       const script = document.createElement("script");
@@ -16,8 +14,7 @@ const KakaoMap = () => {
         resolve();
       });
       script.addEventListener("error", (e) => {
-        reject(e);
-      
+        alert(`Invalid request`)
       });
       document.head.appendChild(script);
     });
@@ -32,70 +29,59 @@ const KakaoMap = () => {
       kakao.maps.load(() => {
         const mapContainer = document.getElementById("map");
         const options = {
-          center: new kakao.maps.LatLng(camping.camping.coordinates.latitude,camping.camping.coordinates.longitude),
-          level: 4,
+          center: new kakao.maps.LatLng(37.5652, 126.9774),
+          level: 3,
         };
         const map = new kakao.maps.Map(mapContainer, options);
 
-        const markerPositions = [new kakao.maps.LatLng(camping.camping.coordinates.latitude,camping.camping.coordinates.longitude)];
+        const markerPositions = [new kakao.maps.LatLng(37.5652, 126.9774)];
 
         markerPositions.forEach((position) => {
           const marker = new kakao.maps.Marker({
             position: position,
           });
           marker.setMap(map);
-          const infowindow = new kakao.maps.InfoWindow({
-            
-            content: `<div style="padding:5px; font-size:12px;">
-                        <strong>${camping.camping.name}</strong><br />
-                        ${camping.camping.facilities}<br />
-                        
-                      </div>`,
-                      
-          });
-          kakao.maps.event.addListener(marker, "mouseover", () => {
-            infowindow.open(map, marker); // Open InfoWindow when hovering
-          });
-        
-          kakao.maps.event.addListener(marker, "mouseout", () => {
-            infowindow.close(); // Close InfoWindow when not hovering
-          });
-  
-          infowindow.open(map, marker);
         });
       });
-    }, [camping]);
-  
-    if (!camping) {
-      return <p>Camping not found</p>; 
-    }
-  
-      
     });
-  
+  }, []);
   return (
-      
-    
     <Wrapper style={{ display: "flex", justifyContent: "center" }}>
       <MapContainer>
-        <h1>{camping.camping.name}</h1><br />
+     
 
         <div id="map" className="map" />
+        <Lasttabdiv>
+         <div>
+          <div>
+            <p>Phone number:</p>
+            <h4>+7 237 181 181</h4>
+            <h4>+7 237 181 181</h4>
+          </div>
+          <div>
+            <p>E-mail:</p>
+            <h4>logo.uz</h4>
+          </div>
+        </div> 
+          
+        </Lasttabdiv>
       </MapContainer>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
+
   display: flex;
-  gap: 50px;
-  margin: 50px 0;
-  width: 100%;
+
   .map {
     flex: 1;
-    height: 400px;
-    /* width: 400px;
-    height: 400px; */
+    
+
+border-radius: 10px;
+background: url(<path-to-image>) lightgray -236.007px -34.061px / 173.41% 152.73% no-repeat;
+    width: 700px;
+    height: 300px;
     align-items: center;
     justify-content: center;
   }
@@ -135,6 +121,4 @@ const MapContainer = styled.div`
   }
 `;
 
-
-
-export default KakaoMap;
+export default KakaMap;

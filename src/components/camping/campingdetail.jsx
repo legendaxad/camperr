@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { campingPlaces } from './campingPlaces';
-import { Campingdiv, Campingtime, Imagescamping } from "./campingstyle";
+import { Campingdiv, Campingtime, Imagescamping, MainCampingdiv } from "./campingstyle";
 import KakaoMap from "../map/kakaomap";
 
 const Campingdetail = () => {
@@ -18,6 +18,7 @@ const Campingdetail = () => {
 
   return (
     <div>
+      <MainCampingdiv>
       <Campingdiv>
         <Imagescamping>
      
@@ -131,6 +132,7 @@ const Campingdetail = () => {
         <br />
         <KakaoMap/>
       </Campingdiv>
+      </MainCampingdiv>
     </div>
   );
 };

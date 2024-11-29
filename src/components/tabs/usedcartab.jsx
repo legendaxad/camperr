@@ -3,14 +3,10 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import { BeforeDiv, BigSeconddiv, CarinTab, Lasttabdiv, MAInrevie, MainReview, MiddleReview, SecondMiddle, SecondTab } from './tabstyle';
+import { BeforeDiv, BigSeconddiv, CarinTab, Emaildesign,  MAInrevie, MainReview, MiddleReview, SecondMiddle, SecondTab } from './tabstyle';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import topCamperCars from './topCamperCars';
-// import { useParams } from 'react-router-dom';
-
-import Location from '../../assets/Screenshot_1 1.svg'
-
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -18,28 +14,11 @@ import Typography from '@mui/material/Typography';
 
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { usedVehicles } from '../mock/usedcar';
+import emailjs from '@emailjs/browser';
+import KakaMap from '../map/kakamap';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
-
-  const form = React.useRef();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm('service_i7k3t4d', 'template_zia1ixb', form.current, {
-        publicKey: '1-eQAcg9u0ReJFiDN',
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
-  };
   return (
     <div
       role="tabpanel"
@@ -75,22 +54,39 @@ export default function Usedcartabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const form = useRef();
+  const form = React.useRef();
+
+  const validateEmail = (email) => {
+    // Regex for validating email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
 
+    // Get the email input value
+    const email = form.current['user_email'].value;
+
+    // Validate the email
+    if (!validateEmail(email)) {
+      alert('Invalid email address. Please enter a valid email.');
+      return;
+    }
+
+    // Send email using EmailJS
     emailjs
       .sendForm('service_i7k3t4d', 'template_zia1ixb', form.current, {
         publicKey: '1-eQAcg9u0ReJFiDN',
       })
       .then(
         () => {
-          console.log('SUCCESS!');
+          alert('Your message is sent');
         },
         (error) => {
           console.log('FAILED...', error.text);
-        },
+          alert('Your message is not sent. Please try again.');
+        }
       );
   };
 
@@ -238,15 +234,17 @@ export default function Usedcartabs() {
       </Accordion>
 </SecondTab>
 <SecondMiddle>
+
+<form  ref={form} onSubmit={sendEmail}>
   <h2 >Send a question</h2>
-  <input id="input3" type="text" placeholder="Your name" />
-  <input id="input1" type="text" placeholder="Your email" />
-  <textarea placeholder="Your question"/>
+  <Emaildesign>
+  <input id="input3" name="user_name"  type="text" placeholder="Your name" />
+  <input id="input1" name="user_email" type="text" placeholder="Your email" />
+  <textarea name="message" placeholder="Your question"/><br />
+  </Emaildesign>
   <button><p>Send question</p></button>
-
-
-  
-</SecondMiddle>
+  </form>
+  </SecondMiddle>
 </BigSeconddiv>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
@@ -330,36 +328,33 @@ export default function Usedcartabs() {
       </Accordion>
 </SecondTab>
 <SecondMiddle>
+  
+  <form  ref={form} onSubmit={sendEmail}>
   <h2 >Have you got a question</h2>
-  <input id="input3" type="text" placeholder="Your name" />
-  <input id="input1" type="text" placeholder="Your email" />
-  <textarea placeholder="Your question"/>
+  <Emaildesign>
+  <input id="input3" name="user_name"  type="text" placeholder="Your name" />
+  <input id="input1" name="user_email" type="text" placeholder="Your email" />
+  <textarea name="message" placeholder="Your question"/><br />
+  </Emaildesign>
   <button><p>Send question</p></button>
+  </form>
 </SecondMiddle>
 </BigSeconddiv>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-      <BeforeDiv>  <Lasttabdiv>
-        <img src={Location} alt="" />
-        <div>
-          <div>
-            <p>Phone number:</p>
-            <h4>+7 237 181 181</h4>
-            <h4>+7 237 181 181</h4>
-          </div>
-          <div>
-            <p>E-mail:</p>
-            <h4>logo.uz</h4>
-          </div>
-        </div>
-          
-        </Lasttabdiv>
+      <BeforeDiv>  
+      <KakaMap/>
       <SecondMiddle>
+  
+  <form  ref={form} onSubmit={sendEmail}>
   <h2 >Have you got a question</h2>
-  <input id="input3" type="text" placeholder="Your name" />
-  <input id="input1" type="text" placeholder="Your email" />
-  <textarea placeholder="Your question"/>
+  <Emaildesign>
+  <input id="input3" name="user_name"  type="text" placeholder="Your name" />
+  <input id="input1" name="user_email" type="text" placeholder="Your email" />
+  <textarea name="message" placeholder="Your question"/><br />
+  </Emaildesign>
   <button><p>Send question</p></button>
+  </form>
 </SecondMiddle></BeforeDiv>
       </CustomTabPanel>
     </Box>
