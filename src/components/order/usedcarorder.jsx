@@ -1,13 +1,14 @@
 import React from 'react'
 import { Carorder, Divorder, Order, Orderdiv, Wrapper } from './orderstyle'
 
-import { motordata } from '../mock/motor';
+
 import { useParams } from 'react-router-dom';
-const Myordercomponent = () => {
+import { usedVehicles } from '../mock/usedcar';
+const Usedcarorder = () => {
   const { id } = useParams();
-  const car = motordata.find((item) => item.id === parseInt(id));
+  const car = usedVehicles.find((item) => item.id === parseInt(id));
   return (
-    
+      
     <div>
       <Order>
       <h2>My orders</h2><br />
@@ -35,4 +36,4 @@ const Myordercomponent = () => {
   )
 }
 
-export default Myordercomponent
+export default Usedcarorder

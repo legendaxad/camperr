@@ -39,7 +39,7 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Motor = () => {
-  // const [checkedData,setcheckedData]=useState([])
+  const [checkedData,setcheckedData]=useState([])
 const [searchData,setsearchData]=useState('')
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
   const [age, setAge] = useState("");
@@ -52,6 +52,20 @@ const [searchData,setsearchData]=useState('')
   const HandleCube = () => setActive(true);
   const Handleline = () => setActive(false);
 
+// const searchDatalist = motordata.filter((data)=>data.car.name.includes(searchData))
+  const handleCheckbox=(e)=>{
+    const {value,checked}=e.target;
+    if(checked){
+      setcheckedData((prev)=>[...prev,value]);
+
+
+    }else{
+      setcheckedData((prev)=>prev.filter((data)=>data!==value));
+    }
+  };
+  // const filterdata= motordata.filter((data)=>
+    
+  //   checkedData.includes(data.car.people));
   return (
     <>
       <div>
@@ -98,16 +112,21 @@ const [searchData,setsearchData]=useState('')
                 <Stright>
                   <div>
                     <Checkbox {...label} />
-                    <label htmlFor="">Aidal</label>
+                    <label htmlFor="">르노마스터</label>
                   </div>
                   <div>
                     <Checkbox {...label} />
-                    <label htmlFor="">Knal</label>
+                    <label htmlFor="">포터</label>
                   </div>
                   <div>
                     <Checkbox {...label} />
-                    <label htmlFor="">Escape</label>
+                    <label htmlFor="">봉고</label>
                   </div>
+                  <div>
+                    <Checkbox {...label} />
+                    <label htmlFor="">이베코 뉴데일리</label>
+                  </div>
+                 
                 </Stright>
               </AccordionDetails>
             </Accordion>
@@ -123,11 +142,27 @@ const [searchData,setsearchData]=useState('')
                 <Stright>
                   <div>
                     <Checkbox {...label} />
-                    <label htmlFor="">Escape</label>
+                    <label htmlFor="">다온티앤티</label>
                   </div>
                   <div>
                     <Checkbox {...label} />
-                    <label htmlFor="">Aidal</label>
+                    <label htmlFor="">Azure</label>
+                  </div>
+                  <div>
+                    <Checkbox {...label} />
+                    <label htmlFor="">제일모빌</label>
+                  </div>
+                  <div>
+                    <Checkbox {...label} />
+                    <label htmlFor="">영남캠핑카</label>
+                  </div>
+                  <div>
+                    <Checkbox {...label} />
+                    <label htmlFor="">한울캠핑카</label>
+                  </div>
+                  <div>
+                    <Checkbox {...label} />
+                    <label htmlFor="">훼미리캠핑카</label>
                   </div>
                 </Stright>
               </AccordionDetails>
@@ -144,16 +179,13 @@ const [searchData,setsearchData]=useState('')
                 <Stright>
                   <div>
                     <Checkbox {...label} />
-                    <label htmlFor="">1 year</label>
+                    <label htmlFor="">1종 보통</label>
                   </div>
                   <div>
                     <Checkbox {...label} />
-                    <label htmlFor="">2 year</label>
+                    <label htmlFor="">2종 보통</label>
                   </div>
-                  <div>
-                    <Checkbox {...label} />
-                    <label htmlFor="">1.5 year</label>
-                  </div>
+                 
                 </Stright>
               </AccordionDetails>
             </Accordion>
@@ -169,15 +201,19 @@ const [searchData,setsearchData]=useState('')
                 <Stright>
                   <div>
                     <Checkbox {...label} />
-                    <label htmlFor="">2</label>
+                    <label value="3인" onChange={handleCheckbox} htmlFor="">3인</label>
                   </div>
                   <div>
                     <Checkbox {...label} />
-                    <label htmlFor="">3-4</label>
+                    <label value="4인" onChange={handleCheckbox} htmlFor="">4인</label>
                   </div>
                   <div>
                     <Checkbox {...label} />
-                    <label htmlFor="">5+</label>
+                    <label value="5인" onChange={handleCheckbox} htmlFor="">5인</label>
+                  </div>
+                  <div>
+                    <Checkbox {...label} />
+                    <label value="6인" onChange={handleCheckbox} htmlFor="">6인</label>
                   </div>
                 </Stright>
               </AccordionDetails>
@@ -194,15 +230,15 @@ const [searchData,setsearchData]=useState('')
                 <Stright>
                   <div>
                     <Checkbox {...label} />
-                    <label htmlFor="">Seoul</label>
+                    <label htmlFor="">경상권</label>
                   </div>
                   <div>
                     <Checkbox {...label} />
-                    <label htmlFor="">Korea</label>
+                    <label htmlFor="">수도권</label>
                   </div>
                   <div>
                     <Checkbox {...label} />
-                    <label htmlFor="">Pusan</label>
+                    <label htmlFor="">충청권</label>
                   </div>
                 </Stright>
               </AccordionDetails>
@@ -210,7 +246,7 @@ const [searchData,setsearchData]=useState('')
             <Buttond>
               <Buttonsecond>Cancel</Buttonsecond>
               <Button>Search</Button>
-            </Buttond>
+            </Buttond><br />
             <Compare>
               <h3>Compare</h3>
               <div>
@@ -228,7 +264,7 @@ const [searchData,setsearchData]=useState('')
                   Item <span>25,156</span>
                 </p>
                 <input
-                  type="text"s
+                  type="text"
                   value={searchData}
                   onChange={(e) => setsearchData(e.target.value)}
                   placeholder="you can find your camping car"
@@ -273,7 +309,7 @@ const [searchData,setsearchData]=useState('')
               </Rightnavbar>
             </Navtable>
             {active ? (
-              <Hmenucomponent searchData={searchData}  />
+              <Hmenucomponent searchData={searchData}  checkedData={checkedData} />
             ) : (
               <Vmenucomponent searchData={searchData} />
             )}

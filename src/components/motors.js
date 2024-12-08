@@ -4,6 +4,7 @@ export const Bigdiv = styled.div`
   padding: 70px;
   display: flex;
   justify-content: center;
+  
 `;
 
 export const Homecop = styled.div`
@@ -25,6 +26,7 @@ export const Leftdiv = styled.div`
       width: 227px;
   display: flex;
   flex-direction: column;
+  border: 1px solid red;
   label {
     color: #000;
     font-family: Montserrat;
@@ -142,7 +144,7 @@ export const Rightb = styled.button`
   line-height: normal;
   border-radius: 60px;
   background: var(--blue, #006dab);
-  float: right !important;
+
 
   /* btn sh */
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
@@ -160,20 +162,22 @@ export const Rightdiv = styled.div`
 export const Navtable = styled.div`
   display: flex;
   align-items: center;
-      width: 1030px;
+  
   justify-content: center ;
 `;
 export const Leftnavbar = styled.div`
   display: flex;
   align-items: center;
+  
   width: 100%;
   justify-content: center;
-  input{
+  input{border-radius:5px;
     width: 100%;
   padding: 10px;
   font-size: 16px;
-  margin: 0px 10px;
+  margin: 0px 20px;
   height: 15px;
+ border-color:white;
   }
   p {display:flex;
     gap: 5px;
@@ -206,6 +210,7 @@ export const Rightnavbar = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  
 `;
 export const Fisrtsearch = styled.div`
  
@@ -257,6 +262,7 @@ export const Menucars = styled.div`
   width: 1030px;
   height: 1px;
   margin-top: 2px;
+  border: 1px solid red;
 
   background: rgba(55, 55, 55, 0.5);
 `;
@@ -265,7 +271,23 @@ export const Menucar = styled.div`
 
   display: grid;
   grid-template-areas: "a a a a";
-  gap: 20px;
+  
+  @media only screen and (max-width: 1340px) {
+   gap:10px;
+   display: grid;
+   grid-template-areas: "a a a a";
+}
+
+@media only screen and (max-width: 1063px) {
+   gap:20px;
+
+}
+@media only screen and (max-width: 1000px) {
+  display: none;
+}
+@media only screen and (max-width: 450px) {
+   
+}
 `;
 export const Cars = styled.div`
   padding: 10px;

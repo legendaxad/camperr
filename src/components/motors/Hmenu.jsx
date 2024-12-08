@@ -4,10 +4,10 @@ import { Cars, Menucars } from "../motors";
 import { motordata } from "../mock/motor";
 import { Link } from "react-router-dom"
 
-const Hmenucomponent = ({searchData}) => {
+const Hmenucomponent = ({searchData},{filterdata}) => {
   
   // const [searchData , setsearchData]=useState('')
-  const Chekeddata=motordata.filter((data)=>data.car.name.toLowerCase().includes(searchData.toLowerCase()))
+  const Chekeddata=motordata.filter((data)=>data.car.name.toLowerCase().includes(searchData))
   return (
     <>
       <Menucars></Menucars> 
@@ -45,8 +45,14 @@ const Hmenucomponent = ({searchData}) => {
                   <h4>{value.car.cost}</h4>
                 </Link>
                 <div>
-                  <button>Order</button>
-                  <button>Compare</button>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/motor-order/${value.id}`}
+                ><button>Order</button></Link> 
+                 
+                 <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/motor-compare/${value.id}`}>  <button>Compare</button></Link> 
                 </div>
               </Cars>{" "}
             </div>

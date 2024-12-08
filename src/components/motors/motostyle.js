@@ -7,6 +7,26 @@ grid-template-areas: 'a a a a';
 gap: 20px;
 
 padding-top: 20px;
+@media only screen and (max-width: 1340px) {
+   gap:10px;
+   display: grid;
+   grid-template-areas: "a a a a";
+   width: 750px;
+}
+
+@media only screen and (max-width: 1063px) {
+      gap:10px;
+   display: grid;
+   grid-template-areas: " a a a";
+   width: 750px;
+
+}
+@media only screen and (max-width: 1000px) {
+  display: none;
+}
+@media only screen and (max-width: 450px) {
+   
+}
 
 `
 

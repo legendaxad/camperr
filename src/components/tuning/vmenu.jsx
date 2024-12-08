@@ -7,14 +7,15 @@ import { Menucars } from '../motors'
 import { tuning } from '../mock/tuning'
 import { Link } from 'react-router-dom'
 
-const Tuningcomponentv = () => {
-     
+const Tuningcomponentv = ({searchData}) => {
+      const Chekeddata=tuning.filter((data)=>data.car.name.toLowerCase().includes(searchData.toLowerCase()))
+
   return (
     <div>
       <Menucars></Menucars>
      <Vmenucar>
      {
-      tuning.map((value , Hmenu)=>{
+      Chekeddata.map((value , Hmenu)=>{
             return (
                  
                   <>
@@ -33,8 +34,8 @@ const Tuningcomponentv = () => {
                           </div>
                     </Insidecar></Link>
                     <Buttun>
-                          <button><p>Order</p></button>
-                          <button><p>Compare</p></button>
+                    <Link style={{textDecoration:'none'}} to={`/tuning-order/${value.id}`}>  <button><p>Order</p></button></Link>
+                    <Link style={{textDecoration:'none'}} to={`/tuning-compare/${value.id}`}>  <button><p>Compare</p></button></Link>
                     </Buttun>
         
                     </Carinsideinfo>

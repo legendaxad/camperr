@@ -2,29 +2,88 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 display:flex;
-
-position: fixed; /* Fixes the navbar in place */
-  top: 0; /* Aligns it to the top of the viewport */
-  left: 0;
-  width: 100%; /* Ensures it spans the entire width */
-  z-index: 1000; /* Places it above other elements */
-  background-color: white; /* Background color of the navbar */
- 
+justify-content: space-around;
+padding: 22px 70px;
+@media only screen and (max-width: 450px) {
+  padding: 12px 20px;
+  }
+  @media only screen and (max-width: 1050px) {
+  justify-content: space-between;
   
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-align-items: center;
-justify-content: space-evenly;
-padding:0px 70px;
-
-
-div{
-padding: 22px 0px 22px 
 }
 `
+export const Firstdiv=styled.div`
+padding: 0px 10px;
+h1{
+  color: var(--blue, #006DAB);
+font-family: Montserrat;
+font-size: 38px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+
+@media only screen and (max-width: 1000px) {
+display: flex;
+justify-content: center;
+align-items: center;
+h1{
+  color: var(--blue, #006DAB);
+font-family: Montserrat;
+font-size: 35px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+}
+
+
+`
+
+export const Phonedis=styled.div`
+@media only screen and (max-width: 1600px) {
+   display: none;
+}
+
+@media only screen and (max-width: 1062px) {
+  display: none;
+}
+@media only screen and (max-width: 450px) {
+  display: flex;
+}
+
+`
+export const Ipadversion=styled.div`
+@media only screen and (max-width: 1600px) {
+   display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  display: flex;
+}
+@media only screen and (max-width: 450px) {
+  display: none;
+}
+
+`
+
 export const Menucont = styled.div`
 display:flex;
 align-items: center;
 gap:88px;
+@media only screen and (max-width: 1240px) {
+   gap:40px;
+}
+
+@media only screen and (max-width: 1063px) {
+   gap:20px;
+}
+@media only screen and (max-width: 1000px) {
+  display: none;
+}
+@media only screen and (max-width: 450px) {
+   
+}
 
 
 p{
@@ -42,4 +101,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 gap: 23px;
+@media only screen and (max-width: 450px) {
+   display: none;
+  }
 `;

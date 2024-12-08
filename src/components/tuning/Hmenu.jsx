@@ -6,8 +6,9 @@ import { Hmenuca } from "./tuninfstylem"
 import { tuning } from "../mock/tuning"
 
 
-const Tuningcomponenth = () => {
+const Tuningcomponenth = ({searchData}) => {
    
+      const Chekeddata=tuning.filter((data)=>data.car.name.toLowerCase().includes(searchData.toLowerCase()))
 
       return (
     <>
@@ -15,7 +16,7 @@ const Tuningcomponenth = () => {
 
     <Hmenuca>
 {
-      tuning.map((value , Hmenu)=>{
+      Chekeddata.map((value , Hmenu)=>{
             return (
                  
                      
@@ -28,8 +29,13 @@ const Tuningcomponenth = () => {
 </svg>{value.car.rate}</p>
                         </div>
                         <h4>{value.car.cost}</h4></Link> 
-                        <div><button>Order</button>
-                        <button>Compare</button></div>
+                        <div> <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/tuning-order/${value.id}`}
+                ><button>Order</button></Link> 
+                        <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/tuning-compare/${value.id}`}>  <button>Compare</button></Link> </div>
                   </Cars>
                    </div>  
                    

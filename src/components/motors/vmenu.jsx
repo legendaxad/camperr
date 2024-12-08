@@ -33,8 +33,8 @@ const Vmenucomponent = ({searchData}) => {
                           </div>
                     </Insidecar></Link>
                     <Buttun>
-                          <button><p>Order</p></button>
-                          <button><p>Compare</p></button>
+                    <Link style={{textDecoration:'none'}} to={`/motor-order/${value.id}`}>  <button><p>Order</p></button></Link>
+                    <Link style={{textDecoration:'none'}} to={`/motor-compare/${value.id}`}>  <button><p>Compare</p></button></Link>
                     </Buttun>
         
                     </Carinsideinfo>

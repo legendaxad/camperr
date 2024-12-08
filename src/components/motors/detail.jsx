@@ -17,6 +17,7 @@ import BasicTabs from '../tabs';
 //tabs
 
 const Detailmotors = () => {
+  
     
       const { id } = useParams();
       const car = motordata.find((item) => item.id === parseInt(id));

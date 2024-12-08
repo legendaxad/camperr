@@ -6,16 +6,16 @@ import { Link } from 'react-router-dom'
 
 
 
-const UsedcomponentH = () => {
+const UsedcomponentH = ({searchData}) => {
    
-
+const caheckedData=usedVehicles.filter((data)=>data.car.name.toLocaleLowerCase().includes(searchData.toLowerCase()))
       return (
     <>
     <Menucars></Menucars>
 
     <Hmenuca>
 {
-      usedVehicles.map((value , Hmenu)=>{
+      caheckedData.map((value , Hmenu)=>{
             return (
                  
                      
@@ -29,8 +29,16 @@ const UsedcomponentH = () => {
 </svg>{value.car.rate}</p>
                         </div>
                         <h4>{value.car.cost}</h4></Link> 
-                        <div><button>Order</button>
-                        <button>Compare</button></div>
+                        <div>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/used-car-order/${value.id}`}
+                ><button>Order</button></Link> 
+                 
+                 <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/used-car-compare/${value.id}`}>  <button>Compare</button></Link> 
+                </div>
                   </Cars></div>  
                    
             )

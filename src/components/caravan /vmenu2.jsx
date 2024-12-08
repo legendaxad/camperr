@@ -14,14 +14,15 @@ import { Menucars } from '../motors'
 import { caravans} from "../mock/caravan"
 import { Link } from 'react-router-dom'
 
-const Caravancomp= () => {
-     
+const Caravancomp= ({searchData}) => {
+      const Chekeddata=caravans.filter((data)=>data.car.name.toLowerCase().includes(searchData.toLowerCase()))
+
   return (
     <div>
       <Menucars></Menucars>
      <Vmenucar>
      {
-      caravans.map((value , Hmenu)=>{
+      Chekeddata.map((value , Hmenu)=>{
             return (
                  
                   <>
@@ -40,8 +41,12 @@ const Caravancomp= () => {
                           </div>
                     </Insidecar></Link>
                     <Buttun>
-                          <button><p>Order</p></button>
-                          <button><p>Compare</p></button>
+                    <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/caravan-order/${value.id}`}>  <button><p>Order</p></button></Link>
+                          <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/caravan-compare/${value.id}`}>  <button><p>Compare</p></button></Link>
                     </Buttun>
         
                     </Carinsideinfo>

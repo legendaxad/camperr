@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Backmenu } from './homestyle'
-import { Bigdiv, Button, Buttond, Buttonsecond,  Compare, Fisrtsearch, Foursearch, Leftdiv, Leftnavbar, Navtable, Price,    Rightb,  Rightdiv,  Rightnavbar,    Stright,    Table,  } from './motors'
+import { Bigdiv, Button, Buttond, Buttonsecond,  Compare,  Foursearch, Leftdiv, Leftnavbar, Navtable, Price,    Rightb,  Rightdiv,  Rightnavbar,    Stright,    Table,  } from './motors'
 import first from "../assets/first.svg"
 import second from "../assets/first.svg"
 import third from "../assets/first.svg"
@@ -16,7 +16,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ByOptiontuning from './tuning/mui'
+
 // import { Label } from '@mui/icons-material'
 import { Checkbox } from '@mui/material'
 import InputLabel from '@mui/material/InputLabel';
@@ -25,7 +25,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 const Tuningcomponent = () => {
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-
+  const [searchData,setsearchData]=useState('')
   const [age, setAge] = React.useState('');
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -203,12 +203,19 @@ setActive (false)
       </Leftdiv> 
     <Rightdiv>
           <Navtable>
-                <Leftnavbar>
-                      <p>Item <span> 25.156</span></p>
-                </Leftnavbar>
+          <Leftnavbar>
+                <p>
+                  Item <span>25,156</span>
+                </p>
+                <input
+                  type="text"s
+                  value={searchData}
+                  onChange={(e) => setsearchData(e.target.value)}
+                  placeholder="you can find your camping car"
+                />
+              </Leftnavbar>
                 <Rightnavbar>
-                      <Fisrtsearch><p>Sort by</p></Fisrtsearch>
-                      <ByOptiontuning/>
+                    
                       <Box sx={{ minWidth: 100 }}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label"></InputLabel>
@@ -220,9 +227,11 @@ setActive (false)
           size='small'
           onChange={handleChange}
         >
-          <MenuItem value={10}>50</MenuItem>
-          <MenuItem value={20}>60</MenuItem>
-          <MenuItem value={30}>70</MenuItem>
+           <MenuItem value={10}>10</MenuItem>
+                      <MenuItem value={20}>20</MenuItem>
+                      <MenuItem value={30}>30</MenuItem>
+                      <MenuItem value={40}>40</MenuItem>
+                      <MenuItem value={50}>50</MenuItem>
         </Select>
       </FormControl>
     </Box>
@@ -235,7 +244,7 @@ setActive (false)
           
           
           {
-              active ? <Tuningcomponenth/> : <Tuningcomponentv/>
+              active ? <Tuningcomponenth searchData={searchData} /> : <Tuningcomponentv searchData={searchData} />
             }
     </Rightdiv>
 

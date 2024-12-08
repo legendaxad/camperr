@@ -1,11 +1,12 @@
 import React from 'react'
 import { Carorder, Divorder, Order, Orderdiv, Wrapper } from './orderstyle'
 
-import { motordata } from '../mock/motor';
+
 import { useParams } from 'react-router-dom';
-const Myordercomponent = () => {
+import { tuning } from '../mock/tuning';
+const Tuningorder = () => {
   const { id } = useParams();
-  const car = motordata.find((item) => item.id === parseInt(id));
+  const car = tuning.find((item) => item.id === parseInt(id));
   return (
     
     <div>
@@ -35,4 +36,4 @@ const Myordercomponent = () => {
   )
 }
 
-export default Myordercomponent
+export default Tuningorder

@@ -37,11 +37,11 @@ import { CenterFocusStrong } from "@mui/icons-material";
 
 import Hcaravancomponent from "./caravan /Hmenu";
 
-import CamperCaravans from "./caravan /mui";
 import { Accordion } from "@mui/material";
 import Caravancomp from "./caravan /vmenu2";
 
-const Caravancomponents = () => {
+const Caravancompon = () => {
+  const [searchData, setsearchData] = useState("");
   const [active, setActive] = useState(true);
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
   const [age, setAge] = React.useState("");
@@ -101,26 +101,37 @@ const Caravancomponents = () => {
             <AccordionDetails>
               <Stright className="axax">
                 <div>
-                  {" "}
+                  
                   <Checkbox {...label} />
-                  <label for="">Aidal</label>
+                  <label for="">Luxury Caravan</label>
                 </div>
-                <br />
+                
                 <div>
-                  {" "}
+                
                   <Checkbox {...label} />
-                  <label for="">Knal</label>
+                  <label for="">Eco-Friendly Caravan</label>
                 </div>
-                <br />
+                
                 <div>
-                  {" "}
+                  
                   <Checkbox {...label} />
-                  <label for="">Escape</label>
+                  <label for="">Compact Caravan</label>
                 </div>
+                <div>
+                  
+                  <Checkbox {...label} />
+                  <label for="">Mini Camper</label>
+                </div>
+                <div>
+                  
+                  <Checkbox {...label} />
+                  <label for="">High-End Off-Road Caravan</label>
+                </div>
+               
                 <br />
               </Stright>
             </AccordionDetails>
-          </Accordion >
+          </Accordion>
           <Accordion defaultExpanded>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
@@ -134,15 +145,50 @@ const Caravancomponents = () => {
                 <div>
                   {" "}
                   <Checkbox {...label} />
-                  <label for="">escape</label>
+                  <label for="">Green Campers</label>
                 </div>
-                <br />
                 <div>
                   {" "}
                   <Checkbox {...label} />
-                  <label for="">Aidal</label>
+                  <label for="">Nomad Ventures</label>
                 </div>
-                <br />
+                <div>
+                  {" "}
+                  <Checkbox {...label} />
+                  <label for="">Adventure Co</label>
+                </div>
+                <div>
+                  {" "}
+                  <Checkbox {...label} />
+                  <label for="">Home on Wheels</label>
+                </div>
+                
+                <div>
+                  {" "}
+                  <Checkbox {...label} />
+                  <label for="">Compact Rides</label>
+                </div>
+                <div>
+                  {" "}
+                  <Checkbox {...label} />
+                  <label for="">Rugged Rides</label>
+                </div>
+                <div>
+                  {" "}
+                  <Checkbox {...label} />
+                  <label for="">Quick Getaways </label>
+                </div>
+                <div>
+                  {" "}
+                  <Checkbox {...label} />
+                  <label for=""> Sustainable Rides </label>
+                </div>
+                <div>
+                  {" "}
+                  <Checkbox {...label} />
+                  <label for=""> City Caravan Co </label>
+                </div>
+            
               </Stright>
             </AccordionDetails>
           </Accordion>
@@ -159,20 +205,15 @@ const Caravancomponents = () => {
                 <div>
                   {" "}
                   <Checkbox {...label} />
-                  <label for="">1 year</label>
+                  <label for="">1종 보통</label>
                 </div>
-                <br />
+                
                 <div>
                   <Checkbox {...label} />
-                  <label for="">2 year</label>
+                  <label for="">2종 보통</label>
                 </div>
-                <br />
-                <div>
-                  {" "}
-                  <Checkbox {...label} />
-                  <label for="">1.5year</label>
-                </div>
-                <br />
+                
+               
               </Stright>
             </AccordionDetails>
           </Accordion>
@@ -189,24 +230,29 @@ const Caravancomponents = () => {
                 <div>
                   {" "}
                   <Checkbox {...label} />
-                  <label for="">2</label>
+                  <label for="">3인</label>
                 </div>
-                <br />
+                
                 <div>
                   <Checkbox {...label} />
-                  <label for="">3-4</label>
+                  <label for="">4인</label>
                 </div>
-                <br />
+                
                 <div>
                   {" "}
                   <Checkbox {...label} />
-                  <label for="">5+</label>
+                  <label for="">5인</label>
                 </div>
-                <br />
+                <div>
+                  {" "}
+                  <Checkbox {...label} />
+                  <label for="">6+인</label>
+                </div>
+                
               </Stright>
             </AccordionDetails>
           </Accordion>
-          <Accordion defaultExpanded >
+          <Accordion defaultExpanded>
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel2-content"
@@ -219,19 +265,24 @@ const Caravancomponents = () => {
                 <div>
                   {" "}
                   <Checkbox {...label} />
-                  <label for="">Seoul</label>
+                  <label for="">서울 </label>
                 </div>
-                <br />
+              
                 <div>
                   {" "}
                   <Checkbox {...label} />
-                  <label for="">Korea</label>
+                  <label for="">부산</label>
                 </div>
-                <br />
+                
                 <div>
                   {" "}
                   <Checkbox {...label} />
-                  <label for="">Pusan</label>
+                  <label for="">광주 </label>
+                </div>
+                <div>
+                  {" "}
+                  <Checkbox {...label} />
+                  <label for="">전국  </label>
                 </div>
                 <br />
               </Stright>
@@ -257,14 +308,19 @@ const Caravancomponents = () => {
           <Navtable>
             <Leftnavbar>
               <p>
-                Item <span> 25.156</span>
+                Item <span>25,156</span>
               </p>
+              <input
+                type="text"
+                s
+                value={searchData}
+                onChange={(e) => setsearchData(e.target.value)}
+                placeholder="you can find your camping car"
+              />
             </Leftnavbar>
             <Rightnavbar>
-              <Fisrtsearch>
-                <p>Sort by</p>
-              </Fisrtsearch>
-              <CamperCaravans />
+              <Fisrtsearch></Fisrtsearch>
+
               <Box sx={{ minWidth: 100 }}>
                 <FormControl fullWidth>
                   <InputLabel id="demo-simple-select-label"></InputLabel>
@@ -276,9 +332,11 @@ const Caravancomponents = () => {
                     tabIndex={CenterFocusStrong}
                     onChange={handleChange}
                   >
-                    <MenuItem value={10}>50</MenuItem>
-                    <MenuItem value={20}>60</MenuItem>
-                    <MenuItem value={30}>70</MenuItem>
+                    <MenuItem value={10}>10</MenuItem>
+                    <MenuItem value={20}>20</MenuItem>
+                    <MenuItem value={30}>30</MenuItem>
+                    <MenuItem value={40}>40</MenuItem>
+                    <MenuItem value={50}>50</MenuItem>
                   </Select>
                 </FormControl>
               </Box>
@@ -299,11 +357,15 @@ const Caravancomponents = () => {
               </Foursearch>
             </Rightnavbar>
           </Navtable>
-          {active ? <Hcaravancomponent /> : <Caravancomp />}
+          {active ? (
+            <Hcaravancomponent searchData={searchData} />
+          ) : (
+            <Caravancomp searchData={searchData} />
+          )}
         </Rightdiv>
       </Bigdiv>
     </div>
   );
 };
 
-export default Caravancomponents;
+export default Caravancompon;
